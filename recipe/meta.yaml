@@ -17,6 +17,7 @@ requirements:
   host:
     - python
     - pip
+    - wheel
   run:
     - python
     - deprecated >=1.2.6
@@ -41,6 +42,8 @@ about:
   summary: Easy-to-use Python interface for Seeq
   license: AGPL-3.0
   license_file: LICENSE
+  dev_url: https://www.seeq.com
+  doc_url: https://www.seeq.com
 
 extra:
   anaconda-services:
