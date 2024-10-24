@@ -1,0 +1,50 @@
+{% set name = "seeq-spy" %}
+{% set version = "193.12" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/seeq-spy-{{ version }}.tar.gz
+  sha256: d1119a4f84edbae47ac77c92527d0635b2812a601197d229127af8e40b1bbab8
+
+build:
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - deprecated >=1.2.6
+    - numpy >=1.16.4
+    - pandas >=1.0.0
+    - python-dateutil >=2.7.0
+    - pytz >=2020.1
+    - requests >=2.22.0
+    - urllib3 >=1.21.1
+    - dataclasses >=0.7  # [py==36]
+
+test:
+  imports:
+    - seeq
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://www.seeq.com
+  summary: Easy-to-use Python interface for Seeq
+  license: AGPL-3.0
+  license_file: LICENSE
+
+extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/49247
+    reason: Client request
+  recipe-maintainers:
+    - ianaobi
