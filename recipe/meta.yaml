@@ -22,7 +22,8 @@ requirements:
     - python
     - deprecated >=1.2.6
     - numpy >=1.16.4
-    - pandas >=1.0.0
+    #- pandas >=1.0.0
+    - pandas 
     - python-dateutil >=2.7.0
     - pytz >=2020.1
     - requests >=2.22.0
